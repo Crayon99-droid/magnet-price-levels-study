@@ -6,10 +6,9 @@ matplotlib.use("Agg")
 import matplotlib.pyplot as plt
 from reportlab.lib.pagesizes import letter
 from reportlab.lib.styles import ParagraphStyle
-from reportlab.lib.colors import HexColor, white
 from reportlab.lib.enums import TA_JUSTIFY, TA_CENTER
-from reportlab.platypus import (BaseDocTemplate, Frame, PageTemplate, Paragraph, Spacer, Table,
-                                TableStyle, Image, PageBreak, KeepTogether, NextPageTemplate)
+from reportlab.platypus import Paragraph, Spacer, PageBreak, KeepTogether
+import academic as A
 
 R = "../results"
 P1 = "../successor_studies/BTC_Magnet_DC_Phase1_Research_Pack/btc_magnet_dc_v2"
@@ -17,8 +16,6 @@ H5 = "../successor_studies/Magnet_DC_H5_Research_Pack/RESULTS"
 OUT = "."
 c = lambda f: pd.read_csv(os.path.join(R, f))
 
-NAVY, GOLD, GREY, RED = HexColor("#1f3a5f"), HexColor("#a8802a"), HexColor("#555555"), HexColor("#a33a2a")
-RUN = "LIQUIDITY-MAGNET LEVELS IN BITCOIN PERPETUALS"
 
 # ---------------------------------------------------------------- numbers
 n1 = c("H4_NULL1_month_block_bootstrap.csv").set_index("sample")
@@ -44,7 +41,7 @@ def pp(x): return f"{100*x:.2f}"
 def ci(lo, hi, f=pp): return f"[{f(lo)}, {f(hi)}]"
 
 # ---------------------------------------------------------------- figures
-plt.rcParams.update({"font.family": "DejaVu Serif", "font.size": 9})
+plt.rcParams.update({"font.family": "serif", "font.serif": ["Nimbus Roman", "Liberation Serif", "DejaVu Serif"], "font.size": 9, "axes.linewidth": 0.6})
 # Fig 1: real vs geometry vs mirror
 s = c("H4_NULL2_primary_summary.csv") if os.path.exists(os.path.join(R, "H4_NULL2_primary_summary.csv")) else None
 lab = ["All events", "Ratio <= 0.5", "Near is PDH/PDL", "Ratio <= 0.5 and\nnear is PDH/PDL"]
@@ -56,12 +53,11 @@ cols = [cn for cn in ps.columns]
 geo = [ps.loc[k, "geometry_expected_nearer_first"] * 100 for k in keys] if "geometry_expected_nearer_first" in cols else None
 mir = [ps.loc[k, "mirror_nearer_first"] * 100 for k in keys] if "mirror_nearer_first" in cols else None
 x = range(len(keys)); w = 0.26
-ax.bar([i - w for i in x], real, w, label="Real levels", color="#1f3a5f")
-if geo: ax.bar([i for i in x], geo, w, label="Geometry null (driftless)", color="#a8802a")
-if mir: ax.bar([i + w for i in x], mir, w, label="Exact-distance mirror", color="#9aa7b4")
+ax.bar([i - w for i in x], real, w, label="Real levels", color="0.15")
+if geo: ax.bar([i for i in x], geo, w, label="Geometry null (driftless)", color="0.55", hatch="///", edgecolor="0.3", linewidth=0.4)
+if mir: ax.bar([i + w for i in x], mir, w, label="Exact-distance mirror", color="0.85", edgecolor="0.3", linewidth=0.4)
 ax.set_xticks(list(x)); ax.set_xticklabels(lab); ax.set_ylim(60, 90); ax.set_ylabel("Nearer level reached first (%)")
 ax.legend(frameon=False, fontsize=8, ncol=3, loc="upper left"); ax.spines[["top", "right"]].set_visible(False)
-ax.set_title("High destination accuracy is mostly geometry", fontsize=10, color="#1f3a5f", weight="bold")
 fig.tight_layout(); fig.savefig(f"{OUT}/fig1.png", dpi=220); plt.close(fig)
 
 # Fig 2: gross bps per stage vs cost
@@ -72,67 +68,29 @@ st = [("H4.4\npullback", ov["4"].iloc[0]["mean_gross_bps_per_executed_trade"]),
       ("H4.6A2\nfresh GMMA", ov["6A2"].iloc[0]["mean_gross_bps"]),
       ("H4.6B\nDC entry", ov["6B"].iloc[0]["mean_gross_bps"])]
 fig, ax = plt.subplots(figsize=(6.4, 2.9))
-ax.bar(range(len(st)), [v for _, v in st], color=["#1f3a5f"] * len(st))
-ax.axhline(13, color="#a33a2a", ls="--", lw=1.2); ax.text(len(st) - 0.5, 13.4, "13 bp modelled round-trip cost", ha="right", color="#a33a2a", fontsize=8)
+ax.bar(range(len(st)), [v for _, v in st], color="0.35", width=0.6)
+ax.axhline(13, color="black", ls="--", lw=0.9); ax.text(len(st) - 0.5, 13.5, "13 bp modelled round-trip cost", ha="right", fontsize=8)
 ax.axhline(0, color="black", lw=0.6)
 for i, (_, v) in enumerate(st): ax.text(i, v + (0.4 if v >= 0 else -1.4), f"{v:+.2f}", ha="center", fontsize=8)
 ax.set_xticks(range(len(st))); ax.set_xticklabels([n for n, _ in st], fontsize=8)
 ax.set_ylabel("Mean gross bp per trade"); ax.set_ylim(-11, 16); ax.spines[["top", "right"]].set_visible(False)
-ax.set_title("No entry design earned its trading cost before costs", fontsize=10, color="#1f3a5f", weight="bold")
 fig.tight_layout(); fig.savefig(f"{OUT}/fig2.png", dpi=220); plt.close(fig)
 
 # ---------------------------------------------------------------- styles
-T = ParagraphStyle("t", fontName="Times-Bold", fontSize=24, leading=30, alignment=TA_CENTER, textColor=NAVY)
-K = ParagraphStyle("k", fontName="Helvetica-Bold", fontSize=9.5, alignment=TA_CENTER, textColor=GOLD, spaceAfter=14)
-SUB = ParagraphStyle("s", fontName="Times-Italic", fontSize=13, alignment=TA_CENTER, textColor=HexColor("#2f5d8a"), spaceBefore=12)
-AU = ParagraphStyle("a", fontName="Times-Roman", fontSize=11, alignment=TA_CENTER, spaceBefore=28)
-WP = ParagraphStyle("w", fontName="Helvetica-Bold", fontSize=9.5, alignment=TA_CENTER, textColor=NAVY, spaceBefore=50)
-DIS = ParagraphStyle("d", fontName="Helvetica-Oblique", fontSize=8, alignment=TA_CENTER, textColor=RED, spaceBefore=6)
-H1 = ParagraphStyle("h1", fontName="Helvetica-Bold", fontSize=15, leading=19, textColor=NAVY, spaceBefore=14, spaceAfter=8, keepWithNext=1)
-H2 = ParagraphStyle("h2", fontName="Helvetica-Bold", fontSize=11.5, leading=15, textColor=HexColor("#2f5d8a"), spaceBefore=10, spaceAfter=4, keepWithNext=1)
-B = ParagraphStyle("b", fontName="Times-Roman", fontSize=11, leading=16.5, alignment=TA_JUSTIFY, spaceAfter=7)
-BL = ParagraphStyle("bl", parent=B, leftIndent=14, bulletIndent=4, spaceAfter=3)
-CAP = ParagraphStyle("cap", fontName="Times-Italic", fontSize=9.5, leading=12.5, alignment=TA_CENTER, textColor=GREY, spaceBefore=4, spaceAfter=10)
-TC = ParagraphStyle("tc", fontName="Times-Roman", fontSize=8.8, leading=11)
-TH = ParagraphStyle("th", fontName="Helvetica-Bold", fontSize=8.2, leading=10, textColor=white)
-REF = ParagraphStyle("ref", fontName="Times-Roman", fontSize=9.5, leading=12.5, leftIndent=18, firstLineIndent=-18, spaceAfter=5)
-Q = ParagraphStyle("q", parent=H2, fontSize=11)
+H1, H2, B, BL, CAP, REF, Q = A.H1, A.H2, A.BODY, A.BULLET, A.CAP, A.REF, A.Q
 
 
 def tbl(head, rows, widths, cap=None):
-    data = [[Paragraph(h, TH) for h in head]] + [[Paragraph(str(v), TC) for v in r] for r in rows]
-    t = Table(data, colWidths=widths, repeatRows=1)
-    t.setStyle(TableStyle([("BACKGROUND", (0, 0), (-1, 0), NAVY), ("VALIGN", (0, 0), (-1, -1), "TOP"),
-                           ("ROWBACKGROUNDS", (0, 1), (-1, -1), [white, HexColor("#eef2f6")]),
-                           ("GRID", (0, 0), (-1, -1), 0.4, HexColor("#c5ced8")),
-                           ("TOPPADDING", (0, 0), (-1, -1), 3), ("BOTTOMPADDING", (0, 0), (-1, -1), 3)]))
-    out = [t]
-    if cap: out.insert(0, Paragraph(cap, ParagraphStyle("tcap", parent=CAP, spaceBefore=8, spaceAfter=4, fontName="Times-BoldItalic")))
-    return KeepTogether(out)
-
-
-def page(cv, doc):
-    cv.saveState(); cv.setFont("Helvetica-Bold", 8.5); cv.setFillColor(GREY)
-    cv.drawString(72, 747, RUN); cv.setFont("Helvetica", 8.5)
-    cv.drawRightString(540, 37, f"Working paper  |  {doc.page}"); cv.restoreState()
+    return A.table(head, rows, widths, cap)
 
 
 S = []; p = lambda t, st=B: S.append(Paragraph(t, st))
-# ---------------------------------------------------------------- title
-S += [Spacer(1, 150), Paragraph("WHERE PRICE GOES IS NOT HOW TO PROFIT", K),
-      Paragraph("Testing “Liquidity Magnet” Price Levels in Bitcoin Perpetual Futures", T),
-      Paragraph("Geometry nulls, mirror placebos and cost-aware entry tests on Bybit BTCUSDT, 2021-2024", SUB),
-      Paragraph("Rayan Tariq", AU), Paragraph("Working Paper - November 2026", WP),
-      Paragraph("Not investment advice. No tested policy was authorized for live trading.", DIS),
-      NextPageTemplate("body"), PageBreak()]
-
-# ---------------------------------------------------------------- abstract
+# ---------------------------------------------------------------- title + abstract
 mir_all = n2b.loc["ALL"]; mir_pd = n2b.loc["NEAR_HAS_PDH_PDL"]
 m2 = m1b[(m1b.baseline_model == "M1_TREND24") & (m1b.candidate_model == "M2_PDH_PDL")].iloc[0]
 m10 = m1b[(m1b.baseline_model == "M0_GEOMETRY") & (m1b.candidate_model == "M1_TREND24")].iloc[0]
 ga = g1a.loc[1.00]
-p("Abstract", H1)
-p(f"Traders often describe prior highs and lows as “magnets” that pull price toward them. This study tests that "
+ABSTRACT = (f"Traders often describe prior highs and lows as “magnets” that pull price toward them. This study tests that "
   f"idea on 2,103,840 one-minute Bybit BTCUSDT perpetual candles from 2021 to 2024, first as a forecast of which level "
   f"price reaches next, then as a source of tradable entries. Around a 15-minute decision point with one candidate level "
   f"above and one below, the nearer level was reached first in {pp(n1_obs)}% of {7085:,} resolved events. A driftless "
@@ -150,7 +108,9 @@ p(f"Traders often describe prior highs and lows as “magnets” that pull price
   f"in money terms. Independent reconstructions, a target-aware exit diagnostic and a multi-asset machine-learning "
   f"extension (BTC, ETH, XRP) reached the same conclusion. Where price goes next is largely a matter of distance, and "
   f"knowing it did not pay.")
-p("<b>Keywords:</b> support and resistance; liquidity; first-passage time; placebo tests; cryptocurrency; transaction costs; null results")
+S += A.title_block("Where Price Goes Is Not How to Profit: Testing \u201cLiquidity Magnet\u201d Price Levels in Bitcoin Perpetual Futures",
+                   "Rayan Tariq", "Working paper, November 2026", ABSTRACT,
+                   "support and resistance; liquidity; first-passage time; placebo tests; cryptocurrency; transaction costs; null results")
 
 # ---------------------------------------------------------------- 1 intro
 p("1. Introduction", H1)
@@ -266,8 +226,7 @@ p(f"Against the geometry null, the observed rate of {pp(n1_obs)}% exceeded the e
   f"{pp(s5.observed_mean_residual)} points {ci(s5.bootstrap_95pct_low, s5.bootstrap_95pct_high)}. About 95% of the raw "
   f"near-first rate is therefore what distance alone predicts. The structural side tests (stronger side, higher level "
   f"count, more source families) each added only 0.3-0.4 points over geometry.")
-S += [Image(f"{OUT}/fig1.png", width=460, height=208),
-      Paragraph("Figure 1. Real levels compared with the driftless geometry null and the exact-distance mirror placebo on the same paths (H4.NULL2).", CAP)]
+S += [A.figure(f"{OUT}/fig1.png", 440, 199, "Figure 1. Real levels compared with the driftless geometry null and the exact-distance mirror placebo on the same paths (H4.NULL2). Shaded bars: driftless geometry null; light bars: exact-distance mirror.")]
 p("5.3 Mirror placebo", H2)
 rows = []
 for k, lbl in zip(keys, ["All", "Ratio <= 0.5", "Near is PDH/PDL", "Ratio <= 0.5 and near is PDH/PDL"]):
@@ -304,8 +263,7 @@ p(f"Geometry alone (M0) had the best out-of-sample Brier score and log loss. Add
 p("5.6 From destination to trade", H2)
 p("Figure 2 summarizes mean gross returns per trade for each entry design before any cost. None reached the 13 basis "
   "points that a taker pays round trip on Bybit's base tier with modest slippage, and several were negative before costs.")
-S += [Image(f"{OUT}/fig2.png", width=460, height=208),
-      Paragraph("Figure 2. Mean gross basis points per trade by entry design (BTCUSDT 2021-2024) against a 13 bp round-trip cost. H4.5 and H4.5B use the 75% pullback variant.", CAP)]
+S += [A.figure(f"{OUT}/fig2.png", 440, 199, "Figure 2. Mean gross basis points per trade by entry design (BTCUSDT 2021-2024) against a 13 bp round-trip cost. H4.5 and H4.5B use the 75% pullback variant.")]
 r4 = ov["4"].iloc[0]; r6 = ov["6A2"].iloc[0]
 rows = [["H4.4 pullback 25%", f"{int(r4.executed_trades):,}", f"{r4.mean_gross_bps_per_executed_trade:+.2f}", f"{r4.mean_R_conservative:+.3f}", "below 3 bp"],
         ["H4.5B confirmed failure 75%", f"{int(ov['5B'].iloc[2].trades):,}", f"{ov['5B'].iloc[2].mean_gross_bps:+.2f}", f"{ov['5B'].iloc[2].mean_R_conservative:+.3f}", "about 3 bp"],
@@ -471,10 +429,9 @@ rows = [["H4.1", "PDH/PDL destination accuracy", "h4_1_btc_pdh_pdl_v2.py", "H4_1
         ["v2, diagnostic, H5", "Successor reconstructions and ML", "packs/ (btc_magnet_dc_v2.py, magnet_dc_h5.py, ...)", "reports/, packs/"]]
 S.append(tbl(["Stage", "Question", "Script", "Results"], rows, [70, 125, 175, 85]))
 
-doc = BaseDocTemplate(f"{OUT}/Magnet_Levels_BTC_Null_Result_Tariq_2026.pdf", pagesize=letter, leftMargin=72, rightMargin=72,
-                      topMargin=72, bottomMargin=72, title="Testing Liquidity Magnet Price Levels in Bitcoin Perpetual Futures",
-                      author="Rayan Tariq", subject="Working paper, November 2026")
-fr = Frame(72, 60, 468, 672, id="f")
-doc.addPageTemplates([PageTemplate("title", frames=[fr]), PageTemplate("body", frames=[fr], onPage=page)])
-doc.build(S)
+A.build(f"{OUT}/Magnet_Levels_BTC_Null_Result_Tariq_2026.pdf", S,
+        "Where Price Goes Is Not How to Profit: Testing Liquidity Magnet Price Levels in Bitcoin Perpetual Futures",
+        "Rayan Tariq", "Working paper, November 2026",
+        first_page_note=["Data, code and result files: github.com/Crayon99-droid/magnet-price-levels-study.",
+                         "Not investment advice. No tested policy was authorized for live trading."])
 print("built")
