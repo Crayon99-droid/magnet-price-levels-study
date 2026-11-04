@@ -1,0 +1,18 @@
+cff-version: 1.2.0
+message: "If you use this work, please cite the working paper below."
+title: "Liquidity-Magnet Price Levels in Bitcoin Perpetuals"
+authors:
+  - family-names: Tariq
+    given-names: Rayan
+repository-code: "https://github.com/Crayon99-droid/magnet-price-levels-study"
+license: MIT
+preferred-citation:
+  type: report
+  title: "Where Price Goes Is Not How to Profit: Testing \"Liquidity Magnet\" Price Levels in Bitcoin Perpetual Futures"
+  authors:
+    - family-names: Tariq
+      given-names: Rayan
+  year: 2026
+  doi: "10.5281/zenodo.23965420"
+  publisher:
+    name: Zenodo

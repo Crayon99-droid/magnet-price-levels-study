@@ -7,7 +7,7 @@ ETH and XRP.
 
 **Working paper:** [Where Price Goes Is Not How to Profit: Testing "Liquidity
 Magnet" Price Levels in Bitcoin Perpetual Futures](paper/Magnet_Levels_BTC_Null_Result_Tariq_2026.pdf)
-(Rayan Tariq, 2026)
+(Rayan Tariq, 2026), DOI [10.5281/zenodo.23965420](https://doi.org/10.5281/zenodo.23965420)
 
 ## Findings
 
@@ -49,7 +49,8 @@ cd paper && python build_paper.py      # rebuilds the PDF from results/ and succ
 Re-running the studies themselves needs Bybit one-minute BTCUSDT candles (and ETH/XRP for
 H5), which are not redistributed; they can be downloaded from Bybit's public endpoints,
 for example with the tools in
-[crypto-strategy-research](https://github.com/Crayon99-droid/crypto-strategy-research).
+[crypto-strategy-research](https://github.com/Crayon99-droid/crypto-strategy-research)
+(companion paper: DOI [10.5281/zenodo.23965288](https://doi.org/10.5281/zenodo.23965288)).
 Large event- and trade-level files are available on request.
 
 Not investment advice.
