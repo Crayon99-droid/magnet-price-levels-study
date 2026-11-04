@@ -1,0 +1,46 @@
+H4.NULL2 — EXACT-DISTANCE MIRROR PLACEBO
+
+INPUT:
+H4_2_magnet_events.csv
+
+BTC DATA:
+['BTCUSDT_1m_2021.csv.zip', 'BTCUSDT_1m_2022.csv.zip', 'BTCUSDT_1m_2023.csv.zip', 'BTCUSDT_1m_2024.csv.zip']
+
+HORIZON:
+24 hours from H4.2 decision
+
+REAL BARRIERS:
+upper = original H4.2 upper band near edge
+lower = original H4.2 lower band near edge
+
+MIRROR PLACEBO:
+upper_placebo = entry_price + original lower distance
+lower_placebo = entry_price - original upper distance
+
+WHAT IS PRESERVED EXACTLY:
+- event time
+- real future BTC path
+- upper/lower distance pair
+- near/far ratio
+- geometry probability
+- volatility/regime environment
+
+WHAT IS BROKEN:
+- the actual side/location of PDH/PDL, PWH/PWL, 8h extremes,
+  and 15m swing-derived barriers
+
+PRIMARY SAMPLES:
+- all
+- near/far <= 0.50
+- nearer barrier contains PDH/PDL
+- near/far <= 0.50 AND nearer barrier contains PDH/PDL
+
+BOOTSTRAP:
+calendar-month block bootstrap
+repetitions = 10000
+seed = 20260908
+
+IMPORTANT:
+- This is a null-control study, not a trading backtest.
+- No parameter optimization is performed.
+- Same-minute upper+lower touches are marked ambiguous, not ordered.

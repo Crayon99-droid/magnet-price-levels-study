@@ -1,0 +1,63 @@
+H4.6B — BTC MAGNET-GUIDED DIRECTIONAL CHANGE ENTRY
+
+MAGNET INPUT:
+H4_2_magnet_events.csv
+
+PRIMARY MAGNET SAMPLE:
+nearer_distance / farther_distance <= 0.5
+
+DC DETECTOR:
+downward change if close < running_high * (1 - theta)
+upward change if close > running_low * (1 + theta)
+
+DC THRESHOLD:
+theta_t = k * sigma_t
+
+FIXED K:
+1.25
+
+WHY K IS FIXED:
+Carried forward from prior independent Algo 2 DC research.
+It is NOT selected by searching the current BTC magnet results.
+
+SIGMA:
+Previous completed UTC day's median of rolling
+240-minute realized volatility.
+
+REALIZED VOLATILITY:
+sqrt(sum of squared one-minute log returns over
+240 minutes)
+
+STATE-AWARE ENTRY:
+
+1. If DC state on last completed M1 candle already points toward magnet:
+   enter at next M1 open after H4.2 decision.
+
+2. If DC state points opposite magnet:
+   wait for close-confirmed DC reversal toward magnet,
+   then enter at next M1 open.
+
+3. If DC is uninitialized:
+   wait for first confirmed DC event toward magnet.
+
+WAITING EVENT CUTOFF:
+DC confirmation must occur strictly before H4.2 first-magnet touch.
+
+TARGET:
+Original nearer H4.2 magnet band edge.
+
+STOP:
+Symmetric 1:1 stop using actual DC entry-to-target distance.
+
+HORIZON:
+24 hours from original H4.2 signal.
+
+ROUND-TRIP COST SENSITIVITY:
+[1.0, 2.0, 3.0, 4.0, 5.0, 7.5, 10.0]
+
+IMPORTANT:
+- H4.2 magnets are not recalculated.
+- No DC threshold grid is searched in this experiment.
+- Same-M1 target+stop ambiguity after entry is conservatively counted as loss.
+- Entry-source strata are reported separately:
+  ALIGNED_AT_SIGNAL versus REVERSAL_TO_MAGNET.

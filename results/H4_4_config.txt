@@ -1,0 +1,44 @@
+H4.4 — BTC PULLBACK ENTRY INTO A PREDICTED MAGNET
+
+INPUT:
+H4_2_magnet_events.csv
+
+PRIMARY SAMPLE:
+nearer_distance / farther_distance <= 0.5
+
+PULLBACK_FRACTIONS:
+[0.25, 0.5, 0.75]
+
+STOP_FROM_SIGNAL_FRACTION:
+1.0
+
+TRADE_HORIZON_HOURS:
+24
+
+ROUND_TRIP_COST_BPS:
+[1.0, 2.0, 3.0, 4.0, 5.0, 7.5, 10.0]
+
+ENTRY RULE:
+- nearer H4.2 magnet defines direction/target
+- pullback is placed against target direction by x * original target distance
+- pullback must fill before original H4.2 first-magnet event terminates
+
+STOP RULE:
+- stop is frozen at 1.00 * original target distance on adverse side of
+  the ORIGINAL signal price
+- no stop optimization grid is used
+
+AMBIGUITY:
+- same-minute fill + target/stop ambiguity is treated conservatively
+  as a full stop loss in primary results
+- unambiguous-only diagnostics are saved separately
+
+TIME EXIT:
+- remaining open trades are marked-to-market at final available 1m close
+  at 24 hours after original H4.2 signal
+
+COSTS:
+- gross results plus sensitivity to predeclared round-trip costs
+- no funding model included yet
+
+NO PARAMETER OPTIMIZATION IS PERFORMED.

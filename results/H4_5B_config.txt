@@ -1,0 +1,32 @@
+H4.5B — BTC CONFIRMED MAGNET FAILURE REVERSAL
+
+INPUT:
+H4_4_pullback_trades.csv
+
+ADVERSE TRIGGERS:
+[0.25, 0.5, 0.75]
+
+CONFIRMATION RULE:
+- adverse threshold must be touched
+- wait until that 1-minute candle completes
+- if H4.2 first-magnet touch occurred on or before that same minute,
+  do not trade
+- otherwise enter reversal at next 1-minute open
+
+REVERSAL TARGET:
+Original H4.2 opposite magnet.
+
+REVERSAL STOP:
+Original H4.2 signal price.
+
+TRADE HORIZON:
+24 hours from original H4.2 signal.
+
+ROUND-TRIP COST SENSITIVITY:
+[1.0, 2.0, 3.0, 4.0, 5.0, 7.5, 10.0]
+
+AMBIGUITY AFTER ENTRY:
+If reversal target and stop are both touched in the same post-entry
+1-minute bar, primary result counts a full -1R loss.
+
+NO PARAMETER OPTIMIZATION.

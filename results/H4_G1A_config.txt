@@ -1,0 +1,34 @@
+H4.G1A — FRESH GMMA STOP FRONTIER + WINNER MAE AUDIT
+
+INPUT:
+H4_6A2_fresh_GMMA_trades.csv
+
+STOP FRACTIONS OF ACTUAL GMMA ENTRY-TO-TARGET DISTANCE D:
+[0.1, 0.25, 0.5, 0.75, 1.0]
+
+TARGET:
+Original H4.6A2 target, +1.0D from actual Fresh GMMA entry.
+
+STOP:
+-sD adverse from actual Fresh GMMA entry.
+
+ZERO-DRIFT BROWNIAN BREAK-EVEN:
+P(TP before SL) = s / (1+s)
+
+HORIZON:
+Original H4.2 decision + 24h where decision_time is available.
+
+SAME-M1 AMBIGUITY:
+Stop first.
+
+TIMEOUT:
+Marked to final available M1 close at horizon.
+
+COST SENSITIVITY:
+[1.0, 2.0, 3.0, 4.0, 5.0, 7.5, 10.0] round-trip bp.
+
+IMPORTANT:
+- Development-sample diagnostic only.
+- No stop fraction is to be declared final from BTC 2021-2024.
+- Fresh GMMA itself was discovered on this sample.
+- External/locked validation remains mandatory.

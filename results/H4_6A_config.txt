@@ -1,0 +1,49 @@
+H4.6A — BTC MAGNET-GUIDED GMMA ENTRY
+
+MAGNET INPUT:
+H4_2_magnet_events.csv
+
+PRIMARY MAGNET SAMPLE:
+nearer_distance / farther_distance <= 0.5
+
+GMMA TIMEFRAME:
+1 minute
+
+FAST EMA RIBBON:
+[3, 5, 8, 10, 12, 15]
+
+SLOW EMA RIBBON:
+[30, 35, 40, 45, 50, 60]
+
+BULLISH GMMA CONFIRMATION:
+min(fast EMAs) > max(slow EMAs)
+AND previous minute was not fully bullish-aligned
+
+BEARISH GMMA CONFIRMATION:
+max(fast EMAs) < min(slow EMAs)
+AND previous minute was not fully bearish-aligned
+
+ENTRY:
+next 1-minute open after confirmation
+
+GMMA MUST OCCUR:
+after H4.2 decision and strictly before H4.2 first-magnet touch
+
+TARGET:
+original nearer H4.2 magnet band edge
+
+STOP:
+symmetric 1:1 stop using actual GMMA entry-to-target distance
+
+HORIZON:
+24 hours from original H4.2 signal
+
+ROUND-TRIP COST SENSITIVITY:
+[1.0, 2.0, 3.0, 4.0, 5.0, 7.5, 10.0]
+
+IMPORTANT:
+- H4.2 magnets are not recalculated.
+- Existing GMMA alignment before the magnet signal is not itself an entry.
+- A new post-signal full-ribbon confirmation is required.
+- Same-M1 target+stop ambiguity after entry is conservatively counted as loss.
+- No parameter optimization is performed.

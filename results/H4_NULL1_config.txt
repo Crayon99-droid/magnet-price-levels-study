@@ -1,0 +1,34 @@
+H4.NULL1 — GEOMETRY CONTROL FOR STRUCTURAL BARRIERS
+
+INPUT:
+H4_2_magnet_events.csv
+
+PRIMARY ZERO-DRIFT FIRST-PASSAGE NULL:
+P(UPPER first) = lower_distance / (upper_distance + lower_distance)
+
+P(NEARER first):
+far_distance / (near_distance + far_distance)
+
+STRONG SUBSET:
+near_distance / far_distance <= 0.50
+
+BOOTSTRAP:
+calendar-month block bootstrap
+repetitions = 10000
+seed = 20260908
+
+STRUCTURAL TESTS AFTER GEOMETRY:
+- original H4.2 stronger side
+- higher raw level-count side
+- higher source-diversity side
+- near-side structural family:
+  PDH/PDL
+  PWH/PWL
+  previous 8h high/low
+  confirmed 15m swing
+
+IMPORTANT:
+- This is a null-control study, not a trading backtest.
+- No parameters are optimized.
+- A positive raw first-touch percentage is NOT treated as evidence
+  of magnetism unless it exceeds the relevant geometry null.

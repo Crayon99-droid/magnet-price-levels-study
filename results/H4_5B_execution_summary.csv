@@ -1,0 +1,4 @@
+pullback_fraction,confirmed_triggers,executed_trades,execution_rate_after_confirmation,no_trade_stop_passed,no_trade_target_passed,missing_next_minute
+0.25,3202,3058,0.9550281074328545,144,0,0
+0.5,2664,2615,0.9816066066066066,49,0,0
+0.75,2251,2235,0.9928920479786761,16,0,0

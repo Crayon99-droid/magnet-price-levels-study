@@ -1,0 +1,26 @@
+H4.3 V3 — BTC MAGNET PATH QUALITY & TRADABILITY
+
+INPUT EVENT FILE:
+H4_2_magnet_events.csv
+
+STOP_FRACTIONS:
+[0.25, 0.5, 0.75, 1.0]
+
+TRADE_HORIZON_HOURS:
+24
+
+PRIMARY PNL CONVENTION:
+- WIN = +1.0 target-distance unit
+- LOSS = -stop_fraction target-distance units
+- AMBIGUOUS_SAME_BAR = conservatively treated as full stop loss
+- TIME_EXIT = directional mark-to-market at final available 1m close
+
+PATH-METRIC CONVENTION:
+- strict_pre_terminal excludes the H4.2 terminal minute
+- inclusive_terminal includes it
+- this avoids pretending we know intraminute ordering
+
+IMPORTANT:
+- H4.2 magnets are NOT recalculated or optimized.
+- Results are GROSS before fees, slippage, and funding.
+- Checkpoints are saved every 500 events.

@@ -1,0 +1,39 @@
+H4.NULL2T — TREND-CONDITIONED MIRROR PLACEBO
+
+PRIMARY TREND:
+24h volatility-normalized trailing return.
+Z24 = log(C[t-1]/C[t-24h-1]) / sqrt(sum M1 log-return^2 over same completed window)
+
+FIXED REGIMES:
+NEUTRAL: |Z24| < 0.5
+MODERATE: 0.5 <= |Z24| < 1.0
+STRONG: |Z24| >= 1.0
+
+ALIGNMENT:
+Trend direction compared with REAL nearer barrier side.
+
+PRIMARY OUTCOME:
+real_nearer_won - mirror_nearer_won
+
+PRIMARY QUESTION:
+Does the NULL2 real-vs-mirror advantage survive after conditioning
+on pre-existing trend direction and strength?
+
+SECONDARY:
+4h normalized momentum. 24h remains primary regardless of results.
+
+BOOTSTRAP:
+Calendar-month block bootstrap, 10000 reps, seed 20260908.
+
+TREND-CONFOUND SUPPORTED IF:
+- advantage ~0 in neutral,
+- advantage positive when aligned,
+- advantage <=0 when opposed,
+- continuous alignment slope >0.
+
+STRUCTURAL RESIDUAL SUPPORTED IF:
+- real still beats mirror in neutral,
+- advantage survives opposed states,
+- meaningful positive residual remains after trend conditioning.
+
+No trading backtest. No GMMA/DC. No threshold optimization.

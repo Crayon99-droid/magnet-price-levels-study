@@ -1,0 +1,20 @@
+H4.2 BTC MULTI-LEVEL LIQUIDITY MAGNET CONFIGURATION
+
+DECISION_TF=15min
+ATR_LENGTH=14
+CLUSTER_ATR_FRACTION=0.15
+SWING_LEFT=2
+SWING_RIGHT=2
+SWING_LOOKBACK_DAYS=7
+UTC_BLOCK_HOURS=8
+MAX_EVENT_HOURS=24
+MIN_LEVELS_PER_SIDE=1
+
+Candidate level families:
+- PDH / PDL
+- PWH / PWL
+- Previous completed 8h UTC block high / low
+- Confirmed 15min swing highs / lows
+
+Events are non-overlapping.
+No optimization is performed in this script.

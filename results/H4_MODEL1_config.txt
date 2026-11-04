@@ -1,0 +1,49 @@
+H4.MODEL1 — GEOMETRY + TREND + STRUCTURE INCREMENTAL OOS TEST
+
+INPUT:
+H4_NULL2T_event_level.csv
+
+OUTCOME:
+UPPER first vs LOWER first among resolved, unambiguous H4.NULL2T events.
+
+FIXED GEOMETRY OFFSET:
+logit(P_upper) = log(lower_distance / upper_distance)
+
+PRIMARY MODELS:
+M0_GEOMETRY:
+  exact geometry only
+
+M1_TREND24:
+  geometry offset + intercept + z_24h
+
+M2_PDH_PDL:
+  M1 + signed near-side PDH/PDL indicator
+
+SECONDARY / EXPLORATORY:
+M3_ALL_STRUCTURE:
+  M1 + signed PDH/PDL + PWH/PWL + previous-8h + swing15
+
+M4_ALL_STRUCTURE_PLUS_4H:
+  M3 + z_4h
+
+WALK-FORWARD:
+Train 2021 -> Test 2022
+Train 2021-2022 -> Test 2023
+Train 2021-2023 -> Test 2024
+
+PRIMARY DECISION:
+Does M2_PDH_PDL improve OOS Brier score and log loss relative to
+M1_TREND24, preferably in multiple years and with month-block
+bootstrap improvement above zero?
+
+BOOTSTRAP:
+calendar-month blocks
+repetitions = 10000
+seed = 20260908
+
+INTERPRETATION:
+- Positive loss improvement means candidate is better.
+- If M2 fails to beat M1, PDH/PDL has not demonstrated incremental
+  predictive value after geometry + trend.
+- M3/M4 are exploratory and must not rescue a failed primary M2.
+- No feature thresholds or model hyperparameters are optimized.

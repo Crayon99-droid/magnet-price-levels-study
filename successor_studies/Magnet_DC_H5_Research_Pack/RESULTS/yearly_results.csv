@@ -1,0 +1,57 @@
+symbol,year,policy,n,net_R,pf,win,med_minutes,sum_net_R,stage
+BTCUSDT,2024,dc,1456,-0.15586,0.5144,51.65,70.5,-226.94,2024 historical checkpoint
+BTCUSDT,2024,invert,1600,-0.15488,0.5269,54.87,54.0,-247.8,2024 historical checkpoint
+BTCUSDT,2024,near,1495,-0.14028,0.5483,53.31,68.0,-209.72,2024 historical checkpoint
+BTCUSDT,2024,align_room,177,-0.22224,0.4541,58.76,32.0,-39.34,2024 historical checkpoint
+BTCUSDT,2024,RIDGE_DC_positiveEV,5,0.08895,1.4728,80.0,69.0,0.44,2024 historical checkpoint
+BTCUSDT,2024,RIDGE_MAGNET_positiveEV,3,0.33347,,100.0,12.0,1.0,2024 historical checkpoint
+BTCUSDT,2024,RIDGE_COMBINED_positiveEV,5,0.07226,1.3443,80.0,63.0,0.36,2024 historical checkpoint
+BTCUSDT,2024,HGB_COMBINED_positiveEV,6,0.42408,,100.0,4.5,2.54,2024 historical checkpoint
+ETHUSDT,2024,dc,1413,-0.12669,0.5894,52.09,78.0,-179.01,2024 historical checkpoint
+ETHUSDT,2024,invert,1555,-0.12285,0.6038,54.92,65.0,-191.04,2024 historical checkpoint
+ETHUSDT,2024,near,1435,-0.14149,0.5576,51.64,74.0,-203.04,2024 historical checkpoint
+ETHUSDT,2024,align_room,155,-0.17689,0.5312,58.06,28.0,-27.42,2024 historical checkpoint
+ETHUSDT,2024,RIDGE_DC_positiveEV,15,-0.12187,0.6545,60.0,27.0,-1.83,2024 historical checkpoint
+ETHUSDT,2024,RIDGE_MAGNET_positiveEV,2,-1.05708,0.0,0.0,69.5,-2.11,2024 historical checkpoint
+ETHUSDT,2024,RIDGE_COMBINED_positiveEV,18,-0.26657,0.4187,50.0,49.0,-4.8,2024 historical checkpoint
+ETHUSDT,2024,HGB_COMBINED_positiveEV,12,-0.14696,0.6206,58.33,3.0,-1.76,2024 historical checkpoint
+ETHUSDT,2025,dc,1355,-0.09741,0.667,54.1,76.0,-131.98,2025-26 retrospective later-year check
+ETHUSDT,2025,invert,1489,-0.08812,0.6966,57.15,63.0,-131.21,2025-26 retrospective later-year check
+ETHUSDT,2025,near,1381,-0.07538,0.7303,56.7,70.0,-104.09,2025-26 retrospective later-year check
+ETHUSDT,2025,align_room,173,-0.15689,0.5812,56.65,30.0,-27.14,2025-26 retrospective later-year check
+ETHUSDT,2025,RIDGE_DC_positiveEV,31,0.04308,1.2216,67.74,61.0,1.34,2025-26 retrospective later-year check
+ETHUSDT,2025,RIDGE_MAGNET_positiveEV,21,0.10446,1.9194,61.9,120.0,2.19,2025-26 retrospective later-year check
+ETHUSDT,2025,RIDGE_COMBINED_positiveEV,30,0.033,1.1585,66.67,64.5,0.99,2025-26 retrospective later-year check
+ETHUSDT,2025,HGB_COMBINED_positiveEV,12,-0.42253,0.2969,41.67,20.0,-5.07,2025-26 retrospective later-year check
+ETHUSDT,2026,dc,906,-0.14122,0.5463,53.64,65.0,-127.95,2025-26 retrospective later-year check
+ETHUSDT,2026,invert,968,-0.13821,0.5613,56.4,56.5,-133.79,2025-26 retrospective later-year check
+ETHUSDT,2026,near,922,-0.12609,0.5797,55.42,63.0,-116.26,2025-26 retrospective later-year check
+ETHUSDT,2026,align_room,119,-0.15018,0.5609,64.71,35.0,-17.87,2025-26 retrospective later-year check
+ETHUSDT,2026,RIDGE_DC_positiveEV,11,-0.03025,0.8601,45.45,120.0,-0.33,2025-26 retrospective later-year check
+ETHUSDT,2026,RIDGE_MAGNET_positiveEV,7,-0.03323,0.7982,28.57,120.0,-0.23,2025-26 retrospective later-year check
+ETHUSDT,2026,RIDGE_COMBINED_positiveEV,8,0.18637,3.7161,75.0,112.0,1.49,2025-26 retrospective later-year check
+ETHUSDT,2026,HGB_COMBINED_positiveEV,3,-0.3641,0.2848,33.33,104.0,-1.09,2025-26 retrospective later-year check
+XRPUSDT,2024,dc,1370,-0.09686,0.656,52.34,79.0,-132.7,2024 historical checkpoint
+XRPUSDT,2024,invert,1487,-0.1157,0.6204,54.74,69.0,-172.04,2024 historical checkpoint
+XRPUSDT,2024,near,1387,-0.09149,0.674,53.5,73.0,-126.9,2024 historical checkpoint
+XRPUSDT,2024,align_room,157,-0.11134,0.6682,59.87,26.0,-17.48,2024 historical checkpoint
+XRPUSDT,2024,RIDGE_DC_positiveEV,153,-0.05964,0.7793,55.56,87.0,-9.12,2024 historical checkpoint
+XRPUSDT,2024,RIDGE_MAGNET_positiveEV,148,-0.11532,0.6119,50.68,104.0,-17.07,2024 historical checkpoint
+XRPUSDT,2024,RIDGE_COMBINED_positiveEV,162,-0.05,0.8097,56.79,87.0,-8.1,2024 historical checkpoint
+XRPUSDT,2024,HGB_COMBINED_positiveEV,43,0.07109,1.2823,72.09,11.0,3.06,2024 historical checkpoint
+XRPUSDT,2025,dc,1468,-0.09726,0.6719,54.5,66.0,-142.77,2025-26 retrospective later-year check
+XRPUSDT,2025,invert,1617,-0.08841,0.7017,57.76,56.0,-142.97,2025-26 retrospective later-year check
+XRPUSDT,2025,near,1503,-0.08293,0.712,56.29,62.0,-124.64,2025-26 retrospective later-year check
+XRPUSDT,2025,align_room,217,-0.08066,0.7537,63.13,20.0,-17.5,2025-26 retrospective later-year check
+XRPUSDT,2025,RIDGE_DC_positiveEV,99,-0.11881,0.6206,52.53,76.0,-11.76,2025-26 retrospective later-year check
+XRPUSDT,2025,RIDGE_MAGNET_positiveEV,82,-0.05743,0.7813,57.32,94.0,-4.71,2025-26 retrospective later-year check
+XRPUSDT,2025,RIDGE_COMBINED_positiveEV,109,-0.11775,0.6338,54.13,53.0,-12.84,2025-26 retrospective later-year check
+XRPUSDT,2025,HGB_COMBINED_positiveEV,46,-0.04394,0.8545,67.39,8.5,-2.02,2025-26 retrospective later-year check
+XRPUSDT,2026,dc,868,-0.17479,0.492,50.23,65.0,-151.72,2025-26 retrospective later-year check
+XRPUSDT,2026,invert,964,-0.11798,0.6145,57.68,61.0,-113.74,2025-26 retrospective later-year check
+XRPUSDT,2026,near,887,-0.16866,0.5018,50.06,67.0,-149.6,2025-26 retrospective later-year check
+XRPUSDT,2026,align_room,109,-0.18732,0.4977,55.05,34.0,-20.42,2025-26 retrospective later-year check
+XRPUSDT,2026,RIDGE_DC_positiveEV,15,-0.04935,0.8199,53.33,87.0,-0.74,2025-26 retrospective later-year check
+XRPUSDT,2026,RIDGE_MAGNET_positiveEV,7,0.1018,1.6338,57.14,89.0,0.71,2025-26 retrospective later-year check
+XRPUSDT,2026,RIDGE_COMBINED_positiveEV,16,-0.0359,0.853,50.0,95.0,-0.57,2025-26 retrospective later-year check
+XRPUSDT,2026,HGB_COMBINED_positiveEV,6,-0.20373,0.4204,33.33,74.5,-1.22,2025-26 retrospective later-year check

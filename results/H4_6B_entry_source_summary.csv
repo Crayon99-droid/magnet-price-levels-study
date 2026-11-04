@@ -1,0 +1,3 @@
+trades,wins,losses,time_exits,ambiguous_same_bar,win_rate_raw,mean_R_conservative,profit_factor_R_conservative,mean_gross_bps,median_gross_bps,mean_minutes_signal_to_entry,median_minutes_signal_to_entry,entry_source
+3114,1569,1519,10,16,0.5038535645472062,0.010631245306936456,1.0215321552260557,2.350065845258464,5.367045213056453,1.0,1.0,ALIGNED_AT_SIGNAL
+446,196,221,24,5,0.43946188340807174,-0.06696808716824428,0.8698226573248646,-3.928986351394853,-3.9880421335135945,138.92152466367713,61.0,REVERSAL_TO_MAGNET

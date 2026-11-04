@@ -1,0 +1,9 @@
+{
+  "fixed_baseline_max_R_diff": 1.176836406102666e-14,
+  "policy": "aligned <=0.5 distance ratio; entry schedule remains identical to 120m fixed TP baseline",
+  "profit_lock": "After a *completed bar* close profits exceed maximum of 0.35R and fee+0.10R, trailing stop for NEXT bar locks fee+0.05R, then +0.35R on strong continuation",
+  "early_fail": "After 10 completed bars at gross -0.25R exit at next minute open",
+  "interpretation": "Matched-entry comparison: no extra trading of freed capacity; no true DC reversal classifier fitted; tests causal realized post-entry OS proxy",
+  "funding": "Not included; historical funding required to certify fully net results",
+  "ohlcv": "No historical quotes, 1bp slippage allowance each fill"
+}

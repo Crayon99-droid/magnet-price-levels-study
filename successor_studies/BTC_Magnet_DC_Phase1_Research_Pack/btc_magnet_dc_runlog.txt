@@ -1,0 +1,103 @@
+AUDIT PASS 2021 525,600 minutes sha256=620a6f5f7814db6c...
+AUDIT PASS 2022 525,600 minutes sha256=65604ac53fcb89f9...
+AUDIT PASS 2023 525,600 minutes sha256=778e89c855d26559...
+AUDIT PASS 2024 527,040 minutes sha256=710ae80850facbd6...
+AUDITED TOTAL 2103840
+LEVELS 50456 {'PIVOT15': 38356, '8H': 8764, 'PD': 2920, 'PW': 416}
+EVENTS 6729 DC total 7096
+CENSORED {-1: 3200, 1: 3154, 0: 371, 2: 3}
+RESULT DC_only_0p5R_120m 2021 1447 -0.09619 0.674
+RESULT DC_only_0p5R_120m 2022 1421 -0.15198 0.526
+RESULT DC_only_0p5R_120m 2023 1788 -0.30325 0.276
+RESULT DC_only_0p5R_120m 2024 1546 -0.15104 0.527
+RESULT Magnet_only_0p5R_120m 2021 1464 -0.07423 0.734
+RESULT Magnet_only_0p5R_120m 2022 1428 -0.12865 0.577
+RESULT Magnet_only_0p5R_120m 2023 1796 -0.26188 0.32
+RESULT Magnet_only_0p5R_120m 2024 1574 -0.14092 0.549
+RESULT Aligned_0p5R_120m 2021 1197 -0.09407 0.679
+RESULT Aligned_0p5R_120m 2022 1143 -0.1388 0.552
+RESULT Aligned_0p5R_120m 2023 1370 -0.27821 0.302
+RESULT Aligned_0p5R_120m 2024 1282 -0.15021 0.526
+RESULT Aligned_ratio0p5_0p5R_120m 2021 883 -0.0823 0.711
+RESULT Aligned_ratio0p5_0p5R_120m 2022 829 -0.0984 0.645
+RESULT Aligned_ratio0p5_0p5R_120m 2023 971 -0.26554 0.312
+RESULT Aligned_ratio0p5_0p5R_120m 2024 938 -0.12095 0.592
+RESULT Aligned_room_0p5R_120m 2021 139 -0.10501 0.694
+RESULT Aligned_room_0p5R_120m 2022 183 -0.14923 0.554
+RESULT Aligned_room_0p5R_120m 2023 238 -0.35413 0.256
+RESULT Aligned_room_0p5R_120m 2024 181 -0.21575 0.464
+RESULT Aligned_room_0p5R_30m 2021 142 -0.14927 0.521
+RESULT Aligned_room_0p5R_30m 2022 185 -0.14726 0.464
+RESULT Aligned_room_0p5R_30m 2023 245 -0.32291 0.214
+RESULT Aligned_room_0p5R_30m 2024 185 -0.24505 0.329
+RESULT Aligned_room_0p25R_120m 2021 143 -0.15852 0.413
+RESULT Aligned_room_0p25R_120m 2022 184 -0.16585 0.302
+RESULT Aligned_room_0p25R_120m 2023 245 -0.31062 0.09
+RESULT Aligned_room_0p25R_120m 2024 186 -0.23327 0.218
+RESULT Aligned_room_1R_120m 2021 137 -0.06572 0.843
+RESULT Aligned_room_1R_120m 2022 178 -0.14045 0.695
+RESULT Aligned_room_1R_120m 2023 232 -0.31761 0.449
+RESULT Aligned_room_1R_120m 2024 176 -0.17284 0.649
+RESULT Inverse_near_0p5R_120m 2021 1492 -0.08875 0.694
+RESULT Inverse_near_0p5R_120m 2022 1489 -0.14952 0.538
+RESULT Inverse_near_0p5R_120m 2023 1853 -0.29648 0.291
+RESULT Inverse_near_0p5R_120m 2024 1599 -0.16912 0.5
+
+DESTINATIONS:
+      group  year    n  near_first_pct  geometry_prediction_pct  excess_vs_geometry_pp  dc_first_pct
+       ALL  2021 1489           73.27                    73.99                 -0.715         68.50
+       ALL  2022 1467           73.35                    72.81                  0.541         66.73
+       ALL  2023 1768           72.96                    72.12                  0.847         66.69
+       ALL  2024 1630           72.76                    73.41                 -0.647         67.55
+RATIO<=0.5  2021  976           82.79                    82.16                  0.625         79.20
+RATIO<=0.5  2022  931           82.38                    81.17                  1.210         78.20
+RATIO<=0.5  2023 1075           81.86                    81.18                  0.678         76.00
+RATIO<=0.5  2024 1044           81.90                    81.86                  0.039         77.97
+   ALIGNED  2021 1250           74.88                    76.42                 -1.544         74.88
+   ALIGNED  2022 1204           74.42                    75.29                 -0.874         74.42
+   ALIGNED  2023 1377           75.45                    75.06                  0.397         75.45
+   ALIGNED  2024 1355           74.24                    76.02                 -1.780         74.24
+  DISAGREE  2021  239           64.85                    61.23                  3.626         35.15
+  DISAGREE  2022  263           68.44                    61.42                  7.019         31.56
+  DISAGREE  2023  391           64.19                    61.76                  2.432         35.81
+  DISAGREE  2024  275           65.45                    60.52                  4.936         34.55
+
+POLICIES:
+                     policy  year    n  mean_net_R  win_pct    PF  median_minutes  funding_flag_pct
+         DC_only_0p5R_120m  2021 1447    -0.09619    52.45 0.674            80.0             16.10
+         DC_only_0p5R_120m  2022 1421    -0.15198    51.37 0.526            70.0             14.43
+         DC_only_0p5R_120m  2023 1788    -0.30325    43.29 0.276            48.0             11.86
+         DC_only_0p5R_120m  2024 1546    -0.15104    52.59 0.527            68.0             14.42
+     Magnet_only_0p5R_120m  2021 1464    -0.07423    54.78 0.734            77.5             15.44
+     Magnet_only_0p5R_120m  2022 1428    -0.12865    53.99 0.577            68.0             14.29
+     Magnet_only_0p5R_120m  2023 1796    -0.26188    46.33 0.320            45.0             11.58
+     Magnet_only_0p5R_120m  2024 1574    -0.14092    53.81 0.549            64.0             14.61
+         Aligned_0p5R_120m  2021 1197    -0.09407    52.63 0.679            81.0             15.54
+         Aligned_0p5R_120m  2022 1143    -0.13880    51.62 0.552            72.0             14.17
+         Aligned_0p5R_120m  2023 1370    -0.27821    44.45 0.302            50.0             12.70
+         Aligned_0p5R_120m  2024 1282    -0.15021    52.11 0.526            69.0             14.74
+Aligned_ratio0p5_0p5R_120m  2021  883    -0.08230    53.57 0.711            77.0             16.31
+Aligned_ratio0p5_0p5R_120m  2022  829    -0.09840    53.80 0.645            70.0             14.35
+Aligned_ratio0p5_0p5R_120m  2023  971    -0.26554    44.39 0.312            51.0             13.08
+Aligned_ratio0p5_0p5R_120m  2024  938    -0.12095    54.58 0.592            67.5             14.07
+    Aligned_room_0p5R_120m  2021  139    -0.10501    59.71 0.694            27.0             10.07
+    Aligned_room_0p5R_120m  2022  183    -0.14923    60.11 0.554            30.0              9.84
+    Aligned_room_0p5R_120m  2023  238    -0.35413    52.94 0.256            30.5             10.50
+    Aligned_room_0p5R_120m  2024  181    -0.21575    59.12 0.464            32.0             11.60
+     Aligned_room_0p5R_30m  2021  142    -0.14927    44.37 0.521            28.0              3.52
+     Aligned_room_0p5R_30m  2022  185    -0.14726    45.95 0.464            30.0              2.70
+     Aligned_room_0p5R_30m  2023  245    -0.32291    37.55 0.214            30.0              3.27
+     Aligned_room_0p5R_30m  2024  185    -0.24505    40.54 0.329            30.0              4.32
+   Aligned_room_0p25R_120m  2021  143    -0.15852    70.63 0.413            10.0              6.29
+   Aligned_room_0p25R_120m  2022  184    -0.16585    60.87 0.302             9.0              5.43
+   Aligned_room_0p25R_120m  2023  245    -0.31062    40.41 0.090            13.0              7.76
+   Aligned_room_0p25R_120m  2024  186    -0.23327    58.06 0.218            11.0              5.91
+      Aligned_room_1R_120m  2021  137    -0.06572    48.18 0.843            54.0             16.06
+      Aligned_room_1R_120m  2022  178    -0.14045    46.63 0.695            70.5             15.17
+      Aligned_room_1R_120m  2023  232    -0.31761    40.52 0.449            57.0             13.79
+      Aligned_room_1R_120m  2024  176    -0.17284    45.45 0.649            60.5             16.48
+    Inverse_near_0p5R_120m  2021 1492    -0.08875    54.62 0.694            80.0             15.68
+    Inverse_near_0p5R_120m  2022 1489    -0.14952    55.20 0.538            61.0             13.97
+    Inverse_near_0p5R_120m  2023 1853    -0.29648    46.25 0.291            41.0             11.33
+    Inverse_near_0p5R_120m  2024 1599    -0.16912    53.60 0.500            55.0             13.51
+END

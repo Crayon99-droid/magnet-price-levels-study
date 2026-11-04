@@ -1,0 +1,234 @@
+{
+  "status": "PASS_DATA_INTEGRITY",
+  "source_dir": ".",
+  "purpose": "data and causal DC preflight; no trades simulated",
+  "dc_theta": "1.25 * prior-completed-day median of rolling-240m realized volatility",
+  "symbols": {
+    "BTCUSDT": {
+      "archive_years": [
+        2021,
+        2022,
+        2023,
+        2024
+      ],
+      "missing_intermediate_years": [],
+      "manifest_file": null,
+      "minute_bars": 2103840,
+      "dc_events": 7096,
+      "dc_up": 3548,
+      "dc_down": 3548,
+      "dc_theta_min": 0.0012545227764109224,
+      "dc_theta_max": 0.08364344583876149,
+      "insufficient_volatility_warmup_minutes": 1440,
+      "files": [
+        {
+          "file": "BTCUSDT_1m_2021.csv.zip",
+          "year": 2021,
+          "rows": 525600,
+          "first_utc": "2021-01-01T00:00:00+00:00",
+          "last_utc": "2021-12-31T23:59:00+00:00",
+          "sha256": "620a6f5f7814db6cf30feab71b52cd3851d3e5afd2425983a6c1160e263c7ded",
+          "zip_member": "BTCUSDT_1m_2021.csv",
+          "manifest_hash_match": null
+        },
+        {
+          "file": "BTCUSDT_1m_2022.csv.zip",
+          "year": 2022,
+          "rows": 525600,
+          "first_utc": "2022-01-01T00:00:00+00:00",
+          "last_utc": "2022-12-31T23:59:00+00:00",
+          "sha256": "65604ac53fcb89f95ea142cb47278d018917fb28400e187592b50997c794613a",
+          "zip_member": "BTCUSDT_1m_2022.csv",
+          "manifest_hash_match": null
+        },
+        {
+          "file": "BTCUSDT_1m_2023.csv.zip",
+          "year": 2023,
+          "rows": 525600,
+          "first_utc": "2023-01-01T00:00:00+00:00",
+          "last_utc": "2023-12-31T23:59:00+00:00",
+          "sha256": "778e89c855d26559c57d1368a730d516debec0aca118f08e7b18de7826180cb0",
+          "zip_member": "BTCUSDT_1m_2023.csv",
+          "manifest_hash_match": null
+        },
+        {
+          "file": "BTCUSDT_1m_2024.csv.zip",
+          "year": 2024,
+          "rows": 527040,
+          "first_utc": "2024-01-01T00:00:00+00:00",
+          "last_utc": "2024-12-31T23:59:00+00:00",
+          "sha256": "710ae80850facbd60faa0d42e57d2004a446f54dde15aac271773d516d8ea7f6",
+          "zip_member": "BTCUSDT_1m_2024.csv",
+          "manifest_hash_match": null
+        }
+      ]
+    },
+    "ETHUSDT": {
+      "archive_years": [
+        2021,
+        2022,
+        2023,
+        2024,
+        2025,
+        2026
+      ],
+      "missing_intermediate_years": [],
+      "manifest_file": null,
+      "minute_bars": 2860997,
+      "dc_events": 8919,
+      "dc_up": 4459,
+      "dc_down": 4460,
+      "dc_theta_min": 0.0013507928737900897,
+      "dc_theta_max": 0.09946675181957684,
+      "insufficient_volatility_warmup_minutes": 1440,
+      "files": [
+        {
+          "file": "ETHUSDT_1m_2021.csv.zip",
+          "year": 2021,
+          "rows": 420480,
+          "first_utc": "2021-03-15T00:00:00+00:00",
+          "last_utc": "2021-12-31T23:59:00+00:00",
+          "sha256": "3751088d60178b5b0e4dada0ee916e1756fa2b4f840050c0d919c86d00d482c3",
+          "zip_member": "ETHUSDT_1m_2021.csv",
+          "manifest_hash_match": null
+        },
+        {
+          "file": "ETHUSDT_1m_2022.csv.zip",
+          "year": 2022,
+          "rows": 525600,
+          "first_utc": "2022-01-01T00:00:00+00:00",
+          "last_utc": "2022-12-31T23:59:00+00:00",
+          "sha256": "23ff47cc41ccc8fac438d79cbac01316a0d335e3c95b398418021da31fb939c2",
+          "zip_member": "ETHUSDT_1m_2022.csv",
+          "manifest_hash_match": null
+        },
+        {
+          "file": "ETHUSDT_1m_2023.csv.zip",
+          "year": 2023,
+          "rows": 525600,
+          "first_utc": "2023-01-01T00:00:00+00:00",
+          "last_utc": "2023-12-31T23:59:00+00:00",
+          "sha256": "924e8a6091cb25360895f22c85be028f340d6be7e1da748e990cfe1eb1dfffdc",
+          "zip_member": "ETHUSDT_1m_2023.csv",
+          "manifest_hash_match": null
+        },
+        {
+          "file": "ETHUSDT_1m_2024.csv.zip",
+          "year": 2024,
+          "rows": 527040,
+          "first_utc": "2024-01-01T00:00:00+00:00",
+          "last_utc": "2024-12-31T23:59:00+00:00",
+          "sha256": "51c22ec8f7dc4d993fc37815d005861474c524f75785130e28930861a844f0c4",
+          "zip_member": "ETHUSDT_1m_2024.csv",
+          "manifest_hash_match": null
+        },
+        {
+          "file": "ETHUSDT_1m_2025.csv.zip",
+          "year": 2025,
+          "rows": 525600,
+          "first_utc": "2025-01-01T00:00:00+00:00",
+          "last_utc": "2025-12-31T23:59:00+00:00",
+          "sha256": "974765fb778998ef1d17aa96c42f661fe1cfca104000e45875a02098e5f5def3",
+          "zip_member": "ETHUSDT_1m_2025.csv",
+          "manifest_hash_match": null
+        },
+        {
+          "file": "ETHUSDT_1m_2026.csv.zip",
+          "year": 2026,
+          "rows": 336677,
+          "first_utc": "2026-01-01T00:00:00+00:00",
+          "last_utc": "2026-08-22T19:16:00+00:00",
+          "sha256": "d715fa40a4d91627924fafe8b83bb14e2d7ad39354cfdba3cd8aac83e5605ed2",
+          "zip_member": "ETHUSDT_1m_2026.csv",
+          "manifest_hash_match": null
+        }
+      ]
+    },
+    "XRPUSDT": {
+      "archive_years": [
+        2021,
+        2022,
+        2023,
+        2024,
+        2025,
+        2026
+      ],
+      "missing_intermediate_years": [],
+      "manifest_file": null,
+      "minute_bars": 2775463,
+      "dc_events": 8819,
+      "dc_up": 4410,
+      "dc_down": 4409,
+      "dc_theta_min": 0.004337440769785608,
+      "dc_theta_max": 0.09490967156829268,
+      "insufficient_volatility_warmup_minutes": 866,
+      "files": [
+        {
+          "file": "XRPUSDT_1m_2021.csv.zip",
+          "year": 2021,
+          "rows": 334946,
+          "first_utc": "2021-05-13T09:34:00+00:00",
+          "last_utc": "2021-12-31T23:59:00+00:00",
+          "sha256": "08c74c3306941f6d251d373ff550627034cd7535c7321df0a32893e6b2604a7f",
+          "zip_member": "XRPUSDT_1m_2021.csv",
+          "manifest_hash_match": null
+        },
+        {
+          "file": "XRPUSDT_1m_2022.csv.zip",
+          "year": 2022,
+          "rows": 525600,
+          "first_utc": "2022-01-01T00:00:00+00:00",
+          "last_utc": "2022-12-31T23:59:00+00:00",
+          "sha256": "ca508415ce1be6b4e9c004e66d3446faa360fd6e6462cc278a79819ea01690bd",
+          "zip_member": "XRPUSDT_1m_2022.csv",
+          "manifest_hash_match": null
+        },
+        {
+          "file": "XRPUSDT_1m_2023.csv.zip",
+          "year": 2023,
+          "rows": 525600,
+          "first_utc": "2023-01-01T00:00:00+00:00",
+          "last_utc": "2023-12-31T23:59:00+00:00",
+          "sha256": "61da4b33d816826de9fe866f3f7619ff727dc046c8d5a44f528bd63912ab86c0",
+          "zip_member": "XRPUSDT_1m_2023.csv",
+          "manifest_hash_match": null
+        },
+        {
+          "file": "XRPUSDT_1m_2024.csv.zip",
+          "year": 2024,
+          "rows": 527040,
+          "first_utc": "2024-01-01T00:00:00+00:00",
+          "last_utc": "2024-12-31T23:59:00+00:00",
+          "sha256": "dc4a5540f671099762ca6a14d3919a15d2d03a7e7d24308b1bfbc21d9f842dd9",
+          "zip_member": "XRPUSDT_1m_2024.csv",
+          "manifest_hash_match": null
+        },
+        {
+          "file": "XRPUSDT_1m_2025.csv.zip",
+          "year": 2025,
+          "rows": 525600,
+          "first_utc": "2025-01-01T00:00:00+00:00",
+          "last_utc": "2025-12-31T23:59:00+00:00",
+          "sha256": "fca8066a6d2ea62b9b5ff77651cc189030777aa9a46b0c5226170335282d6cb1",
+          "zip_member": "XRPUSDT_1m_2025.csv",
+          "manifest_hash_match": null
+        },
+        {
+          "file": "XRPUSDT_1m_2026.csv.zip",
+          "year": 2026,
+          "rows": 336677,
+          "first_utc": "2026-01-01T00:00:00+00:00",
+          "last_utc": "2026-08-22T19:16:00+00:00",
+          "sha256": "f65f069265c0a3ec497cff3e426eacc19d7ce9dc116f91bf9f47895d8124f157",
+          "zip_member": "XRPUSDT_1m_2026.csv",
+          "manifest_hash_match": null
+        }
+      ]
+    }
+  },
+  "warnings": [
+    "BTCUSDT: original SHA256 source manifest not found; cannot independently verify archive provenance",
+    "ETHUSDT: original SHA256 source manifest not found; cannot independently verify archive provenance",
+    "XRPUSDT: original SHA256 source manifest not found; cannot independently verify archive provenance"
+  ]
+}

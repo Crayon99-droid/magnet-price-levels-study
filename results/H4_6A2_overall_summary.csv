@@ -1,0 +1,2 @@
+trades,wins,losses,time_exits,ambiguous_same_bar,win_rate_raw,mean_R_conservative,profit_factor_R_conservative,mean_gross_bps,median_gross_bps,mean_minutes_signal_to_entry,median_minutes_signal_to_entry
+775,418,332,22,3,0.5393548387096774,0.10859913508609984,1.2490136355187775,8.274518859223729,15.574655338645746,35.76516129032258,23.0

@@ -1,0 +1,54 @@
+H4.G1B — FRESH GMMA VS SIMPLE CONFIRMATION PLACEBOS
+
+FAIR SIGNAL POOL:
+H4.6A2 strong signals that were NOT already fully GMMA-aligned
+before the H4.2 decision.
+
+STRATEGY A:
+FRESH_GMMA
+Frozen H4.6A2 entry.
+
+STRATEGY B:
+PROGRESS_25
+First completed M1 close reaching 25% progress
+from H4.2 decision price toward original near target.
+Entry next M1 open.
+
+STRATEGY C:
+GEOM_PLUS_5PP
+First completed M1 close where exact target first-passage probability
+between the two frozen H4.2 barriers improves by
+5% absolute versus the decision-time
+geometry probability.
+Entry next M1 open.
+
+CONFIRMATION CUTOFF:
+Strictly before original H4.2 first-touch minute.
+
+TARGET:
+Original H4.2 nearer barrier.
+
+STOP FRACTIONS:
+[0.75, 1.0]
+
+BROWNIAN BREAK-EVEN FOR TARGET +1D / STOP -sD:
+P_BE = s/(1+s)
+
+COST SENSITIVITY:
+[1.0, 2.0, 3.0, 4.0, 5.0] round-trip bp.
+
+HORIZON:
+Original H4.2 decision + 24h.
+
+SAME-M1 TP/SL:
+Stop first.
+
+PRIMARY QUESTION:
+Does Fresh GMMA outperform simple price progress and dynamic geometry
+confidence on both unmatched strategy summaries and matched-event
+paired comparisons?
+
+IMPORTANT:
+This is still development-sample research.
+Do not optimize 25% progress, +5pp geometry, or stop fractions after
+seeing these results merely to rescue a hypothesis.

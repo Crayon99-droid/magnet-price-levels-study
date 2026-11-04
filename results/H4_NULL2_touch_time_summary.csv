@@ -1,0 +1,5 @@
+sample,paired_resolved_events,median_real_touch_minutes,median_mirror_touch_minutes,mean_real_minus_mirror_touch_minutes
+ALL,6855,95.0,91.0,5.067396061269147
+STRONG_RATIO_<=0.50,3954,55.0,54.0,-0.3750632271117855
+NEAR_HAS_PDH_PDL,512,64.5,60.5,32.3359375
+STRONG_AND_NEAR_HAS_PDH_PDL,337,31.0,35.0,28.795252225519288

@@ -1,0 +1,53 @@
+H4.NULL1 — GEOMETRY CONTROL
+
+This study deliberately replaces the previous informal comparison
+against 50% with the exact zero-drift first-passage geometry null.
+
+ALL RESOLVED EVENTS
+-------------------
+N:
+7085
+
+Observed nearer-first rate:
+0.719125
+
+Geometry-only expected nearer-first rate:
+0.704590
+
+Residual above geometry:
+0.014535
+(1.453 percentage points)
+
+
+STRONG DISTANCE-ASYMMETRY SUBSET (near/far <= 0.50)
+---------------------------------------------------
+N:
+4112
+
+Observed nearer-first rate:
+0.813959
+
+Geometry-only expected nearer-first rate:
+0.792173
+
+Residual above geometry:
+0.021786
+(2.179 percentage points)
+
+
+INTERPRETATION RULE
+-------------------
+Do NOT interpret the observed nearer-first rate itself as evidence of
+a liquidity magnet.
+
+Only the RESIDUAL above a credible geometry / market-dynamics null can
+support a structural-level claim.
+
+If structural features such as level count, source diversity, or
+specific level families fail to add positive residual after geometry,
+the "liquidity magnet" mechanism should be rejected or reframed.
+
+If a residual remains, it must next survive:
+1) empirical matched-placebo barriers on the actual BTC paths,
+2) out-of-sample market tests,
+3) separate entry-model placebo controls.

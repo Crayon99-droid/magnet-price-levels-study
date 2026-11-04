@@ -1,0 +1,52 @@
+H4.6A2 — BTC MAGNET + FRESH GMMA TRANSITION ONLY
+
+MAGNET INPUT:
+H4_2_magnet_events.csv
+
+PRIMARY MAGNET SAMPLE:
+nearer_distance / farther_distance <= 0.5
+
+GMMA TIMEFRAME:
+1 minute
+
+FAST EMA RIBBON:
+[3, 5, 8, 10, 12, 15]
+
+SLOW EMA RIBBON:
+[30, 35, 40, 45, 50, 60]
+
+PRE-SIGNAL ALIGNMENT RULE:
+- use last completed M1 candle immediately before H4.2 decision
+- if already fully aligned in magnet direction, EXCLUDE signal
+
+FRESH BULLISH TRANSITION:
+min(fast EMAs) > max(slow EMAs)
+AND previous M1 candle was not fully bullish-aligned
+
+FRESH BEARISH TRANSITION:
+max(fast EMAs) < min(slow EMAs)
+AND previous M1 candle was not fully bearish-aligned
+
+ENTRY:
+next M1 open after fresh transition
+
+GMMA MUST OCCUR:
+after H4.2 decision and strictly before H4.2 first-magnet touch
+
+TARGET:
+original nearer H4.2 magnet band edge
+
+STOP:
+symmetric 1:1 stop using actual GMMA entry-to-target distance
+
+HORIZON:
+24 hours from original H4.2 signal
+
+ROUND-TRIP COST SENSITIVITY:
+[1.0, 2.0, 3.0, 4.0, 5.0, 7.5, 10.0]
+
+IMPORTANT:
+- H4.2 magnets are not recalculated
+- re-cross cases after pre-existing alignment are excluded
+- same-M1 target+stop ambiguity after entry is conservatively counted as loss
+- no parameter optimization is performed

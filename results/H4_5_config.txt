@@ -1,0 +1,33 @@
+H4.5 — BTC MAGNET FAILURE REVERSAL
+
+INPUT:
+H4_4_pullback_trades.csv
+
+PULLBACK TRIGGERS:
+[0.25, 0.5, 0.75]
+
+TARGET MODELS:
+['FAILURE_LEVEL', 'OPPOSITE_MAGNET']
+
+REVERSAL STOP:
+Original H4.2/H4.4 signal price.
+
+FAILURE_LEVEL TARGET:
+Original H4.4 fixed invalidation level at 1.00D adverse
+from the original signal.
+
+OPPOSITE_MAGNET TARGET:
+Original H4.2 opposite magnet.
+
+TRADE HORIZON:
+24 hours from original H4.2 signal.
+
+ROUND-TRIP COST SENSITIVITY:
+[1.0, 2.0, 3.0, 4.0, 5.0, 7.5, 10.0]
+
+PRIMARY AMBIGUITY RULE:
+If fill minute touches reversal stop or reversal target, or if H4.4
+already marked target-and-fill on the same minute, count the trade
+conservatively as a full -1R loss.
+
+NO PARAMETER OPTIMIZATION.

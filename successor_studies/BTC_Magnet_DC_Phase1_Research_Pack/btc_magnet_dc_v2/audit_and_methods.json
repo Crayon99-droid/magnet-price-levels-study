@@ -1,0 +1,293 @@
+{
+  "archive_audit": [
+    {
+      "year": 2021,
+      "bars": 525600,
+      "first_utc": "2021-01-01T00:00:00Z",
+      "last_utc": "2021-12-31T23:59:00Z",
+      "sha256": "620a6f5f7814db6cf30feab71b52cd3851d3e5afd2425983a6c1160e263c7ded",
+      "zip_crc": "PASS",
+      "chronology": "PASS",
+      "ohlcv": "PASS"
+    },
+    {
+      "year": 2022,
+      "bars": 525600,
+      "first_utc": "2022-01-01T00:00:00Z",
+      "last_utc": "2022-12-31T23:59:00Z",
+      "sha256": "65604ac53fcb89f95ea142cb47278d018917fb28400e187592b50997c794613a",
+      "zip_crc": "PASS",
+      "chronology": "PASS",
+      "ohlcv": "PASS"
+    },
+    {
+      "year": 2023,
+      "bars": 525600,
+      "first_utc": "2023-01-01T00:00:00Z",
+      "last_utc": "2023-12-31T23:59:00Z",
+      "sha256": "778e89c855d26559c57d1368a730d516debec0aca118f08e7b18de7826180cb0",
+      "zip_crc": "PASS",
+      "chronology": "PASS",
+      "ohlcv": "PASS"
+    },
+    {
+      "year": 2024,
+      "bars": 527040,
+      "first_utc": "2024-01-01T00:00:00Z",
+      "last_utc": "2024-12-31T23:59:00Z",
+      "sha256": "710ae80850facbd60faa0d42e57d2004a446f54dde15aac271773d516d8ea7f6",
+      "zip_crc": "PASS",
+      "chronology": "PASS",
+      "ohlcv": "PASS"
+    }
+  ],
+  "bars": 2103840,
+  "dc_events": 7096,
+  "levels": 50456,
+  "dual_magnet_events": 6728,
+  "fixed_research_family": [
+    {
+      "name": "DC_only_0p5R_120m",
+      "signal": "dc",
+      "cohort": "all",
+      "tp_R": 0.5,
+      "horizon": 120
+    },
+    {
+      "name": "Magnet_only_0p5R_120m",
+      "signal": "near",
+      "cohort": "all",
+      "tp_R": 0.5,
+      "horizon": 120
+    },
+    {
+      "name": "Aligned_0p5R_120m",
+      "signal": "dc",
+      "cohort": "aligned",
+      "tp_R": 0.5,
+      "horizon": 120
+    },
+    {
+      "name": "Aligned_ratio0p5_0p5R_120m",
+      "signal": "dc",
+      "cohort": "aligned_ratio_half",
+      "tp_R": 0.5,
+      "horizon": 120
+    },
+    {
+      "name": "Aligned_room_0p5R_120m",
+      "signal": "dc",
+      "cohort": "aligned_ratio_half_room",
+      "minimum_room_R": 0.5,
+      "tp_R": 0.5,
+      "horizon": 120
+    },
+    {
+      "name": "Aligned_room_0p5R_30m",
+      "signal": "dc",
+      "cohort": "aligned_ratio_half_room",
+      "minimum_room_R": 0.5,
+      "tp_R": 0.5,
+      "horizon": 30
+    },
+    {
+      "name": "Aligned_room_0p25R_120m",
+      "signal": "dc",
+      "cohort": "aligned_ratio_half_room",
+      "minimum_room_R": 0.5,
+      "tp_R": 0.25,
+      "horizon": 120
+    },
+    {
+      "name": "Aligned_room_1R_120m",
+      "signal": "dc",
+      "cohort": "aligned_ratio_half_room",
+      "minimum_room_R": 0.5,
+      "tp_R": 1.0,
+      "horizon": 120
+    },
+    {
+      "name": "Inverse_near_0p5R_120m",
+      "signal": "inverse",
+      "cohort": "all",
+      "tp_R": 0.5,
+      "horizon": 120
+    }
+  ],
+  "fee_bp": 11.0,
+  "entry_exit_slippage_bp": 2.0,
+  "funding_cost": "NOT MODELED; flagged potential 8h settlement crossing",
+  "quoted_spread": "NOT AVAILABLE in OHLCV; 1bp/side total execution allowance assumption",
+  "timing": "Signal closes M1, entry next M1 open",
+  "pivots": "M15 2-left / 2-right confirmed at close of second right candle",
+  "magnet_levels": "last completed D/W/8H highs/lows and M15 pivots, no original H4.2 file",
+  "stop_risk_bp": "theta_t * 10000 from previous-day sigma, stop 1R",
+  "exit_rule": "stop first when TP and SL same M1",
+  "nonoverlap": "one position at a time per policy/year",
+  "no_trade": "ignored DC events outside selected cohort",
+  "sampling": "2021-23 exploratory, 2024 chronological checkpoint already explored in older broader research",
+  "bootstrap_CI95_by_year": {
+    "DC_only_0p5R_120m": {
+      "2021": [
+        -0.1317,
+        -0.0615
+      ],
+      "2022": [
+        -0.1863,
+        -0.1174
+      ],
+      "2023": [
+        -0.3633,
+        -0.2466
+      ],
+      "2024": [
+        -0.1832,
+        -0.1205
+      ]
+    },
+    "Magnet_only_0p5R_120m": {
+      "2021": [
+        -0.1048,
+        -0.0455
+      ],
+      "2022": [
+        -0.168,
+        -0.0907
+      ],
+      "2023": [
+        -0.3191,
+        -0.2017
+      ],
+      "2024": [
+        -0.1719,
+        -0.1112
+      ]
+    },
+    "Aligned_0p5R_120m": {
+      "2021": [
+        -0.128,
+        -0.0617
+      ],
+      "2022": [
+        -0.1774,
+        -0.1006
+      ],
+      "2023": [
+        -0.3364,
+        -0.2197
+      ],
+      "2024": [
+        -0.1838,
+        -0.1175
+      ]
+    },
+    "Aligned_ratio0p5_0p5R_120m": {
+      "2021": [
+        -0.1223,
+        -0.0444
+      ],
+      "2022": [
+        -0.1338,
+        -0.0583
+      ],
+      "2023": [
+        -0.3228,
+        -0.2086
+      ],
+      "2024": [
+        -0.16,
+        -0.0859
+      ]
+    },
+    "Aligned_room_0p5R_120m": {
+      "2021": [
+        -0.2009,
+        -0.0045
+      ],
+      "2022": [
+        -0.243,
+        -0.0501
+      ],
+      "2023": [
+        -0.4556,
+        -0.2486
+      ],
+      "2024": [
+        -0.334,
+        -0.1075
+      ]
+    },
+    "Aligned_room_0p5R_30m": {
+      "2021": [
+        -0.2345,
+        -0.0608
+      ],
+      "2022": [
+        -0.2142,
+        -0.0724
+      ],
+      "2023": [
+        -0.4199,
+        -0.2277
+      ],
+      "2024": [
+        -0.335,
+        -0.154
+      ]
+    },
+    "Aligned_room_0p25R_120m": {
+      "2021": [
+        -0.2405,
+        -0.0786
+      ],
+      "2022": [
+        -0.2344,
+        -0.0873
+      ],
+      "2023": [
+        -0.3876,
+        -0.2282
+      ],
+      "2024": [
+        -0.3207,
+        -0.1547
+      ]
+    },
+    "Aligned_room_1R_120m": {
+      "2021": [
+        -0.1644,
+        0.0373
+      ],
+      "2022": [
+        -0.3005,
+        0.0231
+      ],
+      "2023": [
+        -0.4266,
+        -0.1901
+      ],
+      "2024": [
+        -0.3068,
+        -0.0409
+      ]
+    },
+    "Inverse_near_0p5R_120m": {
+      "2021": [
+        -0.1164,
+        -0.0622
+      ],
+      "2022": [
+        -0.1868,
+        -0.1141
+      ],
+      "2023": [
+        -0.3581,
+        -0.2369
+      ],
+      "2024": [
+        -0.2037,
+        -0.1319
+      ]
+    }
+  }
+}

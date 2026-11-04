@@ -1,0 +1,51 @@
+H4.NULL2 — EXACT-DISTANCE MIRROR PLACEBO
+
+Interpretation:
+
+The mirror placebo uses the SAME two barrier distances and the
+SAME future BTC path, but swaps which side receives each distance.
+Therefore geometry is exactly preserved while the real structural
+placement is broken.
+
+SAMPLE: ALL
+Events: 7419
+Paired resolved events: 6855
+Real nearer-first: 0.709993
+Mirror nearer-first: 0.688403
+Real - mirror: 0.021590 (2.159 pp)
+
+SAMPLE: STRONG_RATIO_<=0.50
+Events: 4272
+Paired resolved events: 3954
+Real nearer-first: 0.806525
+Mirror nearer-first: 0.769600
+Real - mirror: 0.036925 (3.692 pp)
+
+SAMPLE: NEAR_HAS_PDH_PDL
+Events: 543
+Paired resolved events: 512
+Real nearer-first: 0.769531
+Mirror nearer-first: 0.681641
+Real - mirror: 0.087891 (8.789 pp)
+
+SAMPLE: STRONG_AND_NEAR_HAS_PDH_PDL
+Events: 355
+Paired resolved events: 337
+Real nearer-first: 0.848665
+Mirror nearer-first: 0.744807
+Real - mirror: 0.103858 (10.386 pp)
+
+Decision rule:
+
+1. If REAL does not outperform MIRROR, the structural-level story
+   is not supported by this placebo.
+
+2. If REAL consistently outperforms MIRROR across years and the
+   month-block bootstrap interval stays above zero, structural
+   placement may contain information beyond geometry and generic
+   BTC path dynamics.
+
+3. PDH/PDL receives special attention because NULL1 showed the
+   largest exploratory residual there. It must now survive this
+   exact-distance placebo before being promoted as a candidate
+   structural feature.
